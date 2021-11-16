@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>VueJS Course</title>
+  <link rel="stylesheet" type="text/css" href="main.css" />
+</head>
+
+<body>
+  <div id="app">
+    <ul>
+      <li v-for="(flower, index) in flowers" :class="flower" :key="flower">
+        {{ flower }} - {{ index }}
+      </li>
+    </ul>
+    <hr>
+    <ul>
+      <li v-for="(person, index) in people">
+        <span>Name: {{ person.name }}</span>&nbsp;
+        <span>Age: {{ person.age }}</span>
+      </li>
+    </ul>
+    <hr>
+    <!-- 
+      Shorter version of the one above. 
+      Easier when you have many values and you want to output them all 
+      Be careful cause having nested loops make the application slower.
+    -->
+    <ul>
+      <li v-for="(person, index) in people">
+        <span v-for="(value, key, index) in person">
+          {{ key }}: {{ value }} - Index: {{ index }}&nbsp;
+        </span>
+      </li>
+    </ul>
+    
+  </div>
+
+  <script src="https://unpkg.com/vue@next"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>
