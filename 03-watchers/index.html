@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jgthms/minireset.css@master/minireset.min.css">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>First Vue App</title>
+</head>
+<body>
+    <div id="app" class="p-10" v-cloak>
+        <a :href="url" class="text-blue-600 duration-300 flex mb-6 hover:text-blue-900">
+            <span class="material-icons mr-2">west</span> Go back to google</a>
+        <h1 class="text-2xl mb-8 border-b-2 border-purple-200 pb-3">Change things!</h1>
+        <p class="mb-3 text-lg">
+            <span class="font-semibold mr-2">Name:</span>
+            <span class="font-light">{{ fullName }}</span>
+        </p>
+        <p class="mb-3 text-lg">
+            <span class="font-semibold mr-2">Age:</span>
+            <span class="font-light">{{ typeof age }}</span>
+        </p>
+
+        <div class="border max-w-xl mt-8 border-purple-600 bg-purple-100 rounded py-7 px-5">
+            <div class="mb-5">
+                <label for="firstname" class="mb-1 font-light">First Name</label>
+                <input v-model.lazy.trim="firstName" name="firstname" id="firstname" type="text" class="border border-gray-400 w-full rounded block px-3 py-2">
+            </div>
+
+            <div class="mb-5">
+                <label for="middlename" class="mb-1 font-light">Middle Name</label>
+                <input @keyup.enter="updateMiddleName" :value="middleName" name="middlename" id="middlename" type="text" class="border border-gray-400 w-full rounded block px-3 py-2">
+            </div>
+    
+            <div class="mb-5">
+                <label for="lastname" class="mb-1 font-light">Last Name</label>
+                <input @input.prevent="updateLastName('Event has been triggered!', $event)" :value="lastName" name="lastname" id="lastname" type="text" class="border border-gray-400 w-full rounded block px-3 py-2">
+            </div>
+
+            <div>
+                <p class="mb-2 font-light">Change Age:</p>
+                <input type="number" name="age" v-model="age" class="border border-gray-400 rounded inline-block w-20 mr-4 px-3 py-2">
+                <button @click="age++" type="button" class="bg-purple-600 rounded duration-300 h-8 w-8 hover:bg-purple-800 mr-3 text-white">+</button>
+                <button @click="age--" type="button" class="bg-purple-600 rounded duration-300 h-8 w-8 hover:bg-purple-800 text-white">-</button>
+            </div>
+            
+        </div>
+
+    </div>
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
