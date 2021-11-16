@@ -1,0 +1,4 @@
+/* Hides the content that displays before the javascript is working */
+[v-cloak] {
+  display: none;
+}
