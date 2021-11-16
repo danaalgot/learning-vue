@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jgthms/minireset.css@master/minireset.min.css">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>First Vue App</title>
+</head>
+<body>
+    <div id="app" class="p-10" v-cloak>
+        <h1 class="text-2xl mb-8 border-b-2 border-purple-200 pb-3">Change the Name!</h1>
+        <p class="mb-3 text-lg">
+            <span class="font-semibold mr-2">Name:</span>
+            <span class="font-light">{{ fullName() }}</span>
+        </p>
+
+        <div class="border max-w-xl border-purple-600 bg-purple-100 rounded py-7 px-5">
+            <div class="mb-5">
+                <label for="firstname" class="mb-1 font-light">First Name</label>
+                <input v-model="firstname" name="firstname" id="firstname" type="text" class="border border-gray-400 w-full rounded block px-3 py-2">
+            </div>
+    
+            <div>
+                <label for="lastname" class="mb-1 font-light">Last Name</label>
+                <input v-model="lastname" name="lastname" id="lastname" type="text" class="border border-gray-400 w-full rounded block px-3 py-2">
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
