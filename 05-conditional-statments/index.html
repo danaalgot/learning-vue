@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>VueJS Course</title>
+  <link rel="stylesheet" type="text/css" href="main.css" />
+</head>
+
+<body>
+  <div id="app">
+    <select v-model="mode">
+      <option value="1">One</option>
+      <option value="2">Two</option>
+      <option value="3">Three</option>
+    </select>
+    <!-- These conditional statments completely hides the elements from the document -->
+    <p v-if="mode == 1">Showing v-if content</p>
+    <template v-else-if="mode == 2">
+      <h3>Hi</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, aperiam? Architecto cum sit dignissimos officiis provident voluptas magnam quo possimus. Sed aspernatur fugit fuga nemo unde ullam provident error aliquam!</p>
+    </template>
+    <p v-else>Another paragraph</p>
+
+
+    <!-- This v-show will hide the element from view with display: none; 
+    and doesn't remove it from the document -->
+    <i v-show="mode == 1">v-show</i>
+  </div>
+
+  
+
+  <script src="https://unpkg.com/vue@next"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>
